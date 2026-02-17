@@ -12,25 +12,16 @@
   --deep-rose: #c9647a;
   --petal: #f7ccd5;
   --cream: #fdf6f0;
-  --gold: #d4a574;
   --text-dark: #5a2d3a;
   --text-mid: #8a4a58;
   --text-light: #c48a98;
-  --white: #fffaf8;
 }
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  background: var(--cream);
-  color: var(--text-dark);
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  overflow-x: hidden;
-  cursor: none;
-}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { background:var(--cream); color:var(--text-dark); font-family:'Lato',sans-serif; font-weight:300; overflow-x:hidden; cursor:none; }
 
 /* ══ CURSOR ══ */
-.cursor { position:fixed; width:12px; height:12px; background:var(--deep-rose); border-radius:50%; pointer-events:none; z-index:99999; transform:translate(-50%,-50%); mix-blend-mode:multiply; transition:width .3s,height .3s; }
+.cursor { position:fixed; width:12px; height:12px; background:var(--deep-rose); border-radius:50%; pointer-events:none; z-index:99999; transform:translate(-50%,-50%); mix-blend-mode:multiply; }
 .cursor-ring { position:fixed; width:36px; height:36px; border:1.5px solid var(--rose); border-radius:50%; pointer-events:none; z-index:99998; transform:translate(-50%,-50%); transition:all .15s ease-out; mix-blend-mode:multiply; }
 
 /* ══ PETALS ══ */
@@ -50,18 +41,13 @@ body {
 .loading-text { font-family:'Dancing Script',cursive; font-size:1.4rem; color:var(--deep-rose); margin-top:1rem; }
 @keyframes hb { 0%,100%{transform:scale(1)} 14%{transform:scale(1.3)} 28%{transform:scale(1)} 42%{transform:scale(1.2)} }
 
-/* ══ MUSIC BAR (floating) ══ */
+/* ══ MUSIC BAR ══ */
 #music-bar {
   position:fixed; bottom:1.5rem; left:50%; transform:translateX(-50%);
-  z-index:9000;
-  background:rgba(255,255,255,0.85);
-  backdrop-filter:blur(12px);
-  border:1px solid rgba(232,160,180,0.4);
-  border-radius:50px;
-  padding:.6rem 1.5rem;
-  display:flex; align-items:center; gap:1rem;
-  box-shadow:0 8px 30px rgba(201,100,122,0.2);
-  cursor:none;
+  z-index:9000; background:rgba(255,255,255,0.85); backdrop-filter:blur(12px);
+  border:1px solid rgba(232,160,180,0.4); border-radius:50px;
+  padding:.6rem 1.5rem; display:flex; align-items:center; gap:1rem;
+  box-shadow:0 8px 30px rgba(201,100,122,0.2); cursor:none;
 }
 .music-label { font-family:'Dancing Script',cursive; font-size:1rem; color:var(--text-mid); }
 .wave-bars { display:flex; gap:3px; align-items:flex-end; height:22px; }
@@ -84,11 +70,10 @@ body {
 #hero {
   min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;
   text-align:center; position:relative; z-index:2; padding:2rem;
-  background:radial-gradient(ellipse at 60% 40%,#fce8ee 0%,#fdf6f0 50%,#fff0f3 100%);
-  overflow:hidden;
+  background:radial-gradient(ellipse at 60% 40%,#fce8ee 0%,#fdf6f0 50%,#fff0f3 100%); overflow:hidden;
 }
 #hero::before { content:''; position:absolute; width:600px;height:600px; border-radius:50%; background:radial-gradient(circle,rgba(232,160,180,.15),transparent 70%); top:-100px;right:-100px; animation:blob 8s ease-in-out infinite; }
-#hero::after  { content:''; position:absolute; width:400px;height:400px; border-radius:50%; background:radial-gradient(circle,rgba(249,228,232,.5),transparent 70%);  bottom:-50px;left:-80px; animation:blob 10s ease-in-out infinite reverse; }
+#hero::after  { content:''; position:absolute; width:400px;height:400px; border-radius:50%; background:radial-gradient(circle,rgba(249,228,232,.5),transparent 70%); bottom:-50px;left:-80px; animation:blob 10s ease-in-out infinite reverse; }
 @keyframes blob { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(20px,-20px) scale(1.05)} }
 .hero-eyebrow { font-size:.7rem; letter-spacing:.5em; text-transform:uppercase; color:var(--deep-rose); opacity:0; animation:riseUp 1s .5s forwards; }
 .hero-name { font-family:'Playfair Display',serif; font-style:italic; font-size:clamp(5rem,18vw,11rem); font-weight:400; line-height:.9; color:var(--deep-rose); text-shadow:3px 3px 0 rgba(232,160,180,.3); opacity:0; animation:riseUp 1.2s .8s forwards; position:relative; }
@@ -98,7 +83,7 @@ body {
 .hero-divider { display:flex; align-items:center; gap:1rem; margin:2.5rem auto; opacity:0; animation:riseUp 1s 1.4s forwards; }
 .hero-divider span { width:60px;height:1px; background:linear-gradient(90deg,transparent,var(--rose)); }
 .hero-divider span:last-child { background:linear-gradient(270deg,transparent,var(--rose)); }
-.reveal-btn { background:linear-gradient(135deg,var(--deep-rose),var(--rose)); color:white; border:none; padding:1rem 2.5rem; border-radius:50px; font-family:'Dancing Script',cursive; font-size:1.2rem; cursor:none; opacity:0; animation:riseUp 1s 1.7s forwards; box-shadow:0 8px 30px rgba(201,100,122,.3); transition:transform .3s,box-shadow .3s; position:relative; overflow:hidden; }
+.reveal-btn { background:linear-gradient(135deg,var(--deep-rose),var(--rose)); color:white; border:none; padding:1rem 2.5rem; border-radius:50px; font-family:'Dancing Script',cursive; font-size:1.2rem; cursor:none; opacity:0; animation:riseUp 1s 1.7s forwards; box-shadow:0 8px 30px rgba(201,100,122,.3); transition:transform .3s,box-shadow .3s; }
 .reveal-btn:hover { transform:scale(1.05) translateY(-3px); box-shadow:0 15px 40px rgba(201,100,122,.4),0 0 0 8px rgba(201,100,122,.1); }
 @keyframes riseUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
 
@@ -113,51 +98,22 @@ body {
 .reveal-close:hover { background:var(--deep-rose); color:white; }
 
 /* ══ DO YOU LOVE ME POPUP ══ */
-#love-popup {
-  position:fixed; inset:0; z-index:9998;
-  display:none; align-items:center; justify-content:center;
-  background:rgba(249,228,232,.6); backdrop-filter:blur(8px);
-}
+#love-popup { position:fixed; inset:0; z-index:9998; display:none; align-items:center; justify-content:center; background:rgba(249,228,232,.6); backdrop-filter:blur(8px); }
 #love-popup.show { display:flex; }
-.popup-box {
-  background:white; border-radius:24px; padding:2.5rem 3rem; text-align:center;
-  box-shadow:0 20px 80px rgba(201,100,122,.3); border:1px solid rgba(232,160,180,.4);
-  max-width:380px; width:90%; position:relative;
-  animation:popIn .4s cubic-bezier(0.34,1.56,0.64,1);
-}
+.popup-box { background:white; border-radius:24px; padding:2.5rem 3rem; text-align:center; box-shadow:0 20px 80px rgba(201,100,122,.3); border:1px solid rgba(232,160,180,.4); max-width:380px; width:90%; position:relative; animation:popIn .4s cubic-bezier(0.34,1.56,0.64,1); }
 @keyframes popIn { from{transform:scale(.6);opacity:0} to{transform:scale(1);opacity:1} }
 .popup-emoji { font-size:4rem; display:block; margin-bottom:1rem; animation:hb 1.2s infinite; }
 .popup-q { font-family:'Playfair Display',serif; font-style:italic; font-size:1.6rem; color:var(--text-dark); margin-bottom:.5rem; }
 .popup-sub { font-family:'Dancing Script',cursive; font-size:1rem; color:var(--text-light); margin-bottom:2rem; }
 .popup-btns { display:flex; gap:1rem; justify-content:center; align-items:center; position:relative; min-height:50px; }
-.btn-yes {
-  background:linear-gradient(135deg,var(--deep-rose),var(--rose));
-  color:white; border:none; padding:.8rem 2rem; border-radius:50px;
-  font-family:'Dancing Script',cursive; font-size:1.2rem; cursor:none;
-  box-shadow:0 6px 20px rgba(201,100,122,.35); transition:transform .3s;
-}
+.btn-yes { background:linear-gradient(135deg,var(--deep-rose),var(--rose)); color:white; border:none; padding:.8rem 2rem; border-radius:50px; font-family:'Dancing Script',cursive; font-size:1.2rem; cursor:none; box-shadow:0 6px 20px rgba(201,100,122,.35); transition:transform .3s; }
 .btn-yes:hover { transform:scale(1.08); }
-.btn-no {
-  background:white; color:var(--text-light); border:1.5px solid rgba(232,160,180,.5);
-  padding:.8rem 2rem; border-radius:50px; font-family:'Lato',sans-serif;
-  font-size:.9rem; cursor:none; transition:all .2s;
-  position:absolute;
-}
-/* No button runs away — JS handles position */
+.btn-no { background:white; color:var(--text-light); border:1.5px solid rgba(232,160,180,.5); padding:.8rem 2rem; border-radius:50px; font-family:'Lato',sans-serif; font-size:.9rem; cursor:none; transition:all .2s; position:absolute; }
 
-/* ══ ROMANTIC Q&A OVERLAY ══ */
-#qa-overlay {
-  position:fixed; inset:0; z-index:9997; display:none;
-  align-items:center; justify-content:center;
-  background:rgba(252,228,236,.95); backdrop-filter:blur(16px);
-}
+/* ══ ROMANTIC Q&A ══ */
+#qa-overlay { position:fixed; inset:0; z-index:9997; display:none; align-items:center; justify-content:center; background:rgba(252,228,236,.95); backdrop-filter:blur(16px); }
 #qa-overlay.show { display:flex; }
-.qa-box {
-  background:white; border-radius:24px; padding:2.5rem 2.5rem;
-  text-align:center; max-width:420px; width:90%;
-  box-shadow:0 20px 80px rgba(201,100,122,.25); border:1px solid rgba(232,160,180,.4);
-  animation:popIn .5s cubic-bezier(0.34,1.56,0.64,1);
-}
+.qa-box { background:white; border-radius:24px; padding:2.5rem; text-align:center; max-width:420px; width:90%; box-shadow:0 20px 80px rgba(201,100,122,.25); border:1px solid rgba(232,160,180,.4); animation:popIn .5s cubic-bezier(0.34,1.56,0.64,1); }
 .qa-step { display:none; }
 .qa-step.active { display:block; }
 .qa-emoji { font-size:3.5rem; display:block; margin-bottom:1rem; }
@@ -169,8 +125,7 @@ body {
 .qa-next:hover { transform:scale(1.06); }
 .qa-options { display:flex; flex-wrap:wrap; gap:.6rem; justify-content:center; margin-top:1rem; }
 .qa-opt { border:1.5px solid rgba(232,160,180,.5); background:white; color:var(--text-dark); padding:.5rem 1.1rem; border-radius:50px; font-family:'Lato',sans-serif; font-size:.85rem; cursor:none; transition:all .3s; }
-.qa-opt:hover, .qa-opt.selected { background:var(--deep-rose); color:white; border-color:var(--deep-rose); }
-/* final screen */
+.qa-opt:hover,.qa-opt.selected { background:var(--deep-rose); color:white; border-color:var(--deep-rose); }
 .qa-final-msg { font-family:'Playfair Display',serif; font-style:italic; font-size:1.15rem; color:var(--text-mid); line-height:1.8; margin:1rem 0; }
 .qa-close { background:none; border:1.5px solid var(--deep-rose); color:var(--deep-rose); padding:.5rem 1.5rem; border-radius:50px; font-size:.8rem; letter-spacing:.2em; cursor:none; transition:all .3s; margin-top:1rem; }
 .qa-close:hover { background:var(--deep-rose); color:white; }
@@ -222,15 +177,10 @@ section { position:relative; z-index:2; }
 .photo-frame { border-radius:12px; overflow:hidden; position:relative; background:var(--petal); cursor:none; transition:transform .4s cubic-bezier(.34,1.56,.64,1),box-shadow .4s; border:3px solid white; box-shadow:0 4px 20px rgba(201,100,122,.1); aspect-ratio:4/3; }
 .photo-frame:first-child { grid-column:1/3; aspect-ratio:16/9; }
 .photo-frame:hover { transform:scale(1.03) rotate(1deg); box-shadow:0 15px 40px rgba(201,100,122,.25); z-index:5; }
-.photo-placeholder { width:100%;height:100%; display:flex; flex-direction:column; align-items:center; justify-content:center; background:linear-gradient(135deg,var(--blush),var(--petal)); color:var(--text-mid); font-family:'Dancing Script',cursive; font-size:1rem; padding:1rem; text-align:center; }
-.photo-icon { font-size:2rem; margin-bottom:.5rem; opacity:.6; }
-.photo-upload-label { margin-top:.5rem; font-size:.65rem; font-family:'Lato',sans-serif; letter-spacing:.15em; text-transform:uppercase; color:var(--deep-rose); border:1px dashed var(--rose); padding:.3rem .8rem; border-radius:20px; cursor:pointer; transition:all .3s; }
-.photo-upload-label:hover { background:var(--deep-rose); color:white; border-color:var(--deep-rose); }
 .photo-frame img { width:100%;height:100%;object-fit:cover;display:block; }
 .photo-overlay { position:absolute; inset:0; background:linear-gradient(180deg,transparent 40%,rgba(201,100,122,.6)); opacity:0; transition:opacity .4s; display:flex; align-items:flex-end; justify-content:center; padding:1rem; }
 .photo-frame:hover .photo-overlay { opacity:1; }
 .photo-caption { font-family:'Dancing Script',cursive; color:white; font-size:1rem; text-shadow:0 1px 4px rgba(0,0,0,.3); }
-.gallery-note { font-family:'Dancing Script',cursive; color:var(--text-light); font-size:1rem; margin-top:1.5rem; }
 
 /* ══ TIMELINE ══ */
 #timeline { background:linear-gradient(180deg,#fdf6f0,#fff0f3); padding:5rem 2rem; }
@@ -259,7 +209,7 @@ footer::before { content:''; position:absolute; inset:0; background:url("data:im
 .footer-name { font-family:'Dancing Script',cursive; font-size:2rem; color:white; position:relative; }
 .footer-sub { font-size:.75rem; letter-spacing:.3em; text-transform:uppercase; color:rgba(255,255,255,.7); margin-top:.5rem; position:relative; }
 
-/* ══ REVEAL ══ */
+/* ══ SCROLL REVEAL ══ */
 .reveal { opacity:0; transform:translateY(40px); transition:opacity .9s ease,transform .9s ease; }
 .reveal.visible { opacity:1; transform:translateY(0); }
 
@@ -287,7 +237,7 @@ footer::before { content:''; position:absolute; inset:0; background:url("data:im
   <p class="loading-text">Loading something special for Kavi...</p>
 </div>
 
-<!-- Custom cursor -->
+<!-- Cursor -->
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursor-ring"></div>
 
@@ -297,9 +247,10 @@ footer::before { content:''; position:absolute; inset:0; background:url("data:im
 <!-- Toast -->
 <div id="toast">🌸</div>
 
+<!-- Background Music (starts from 7th second) -->
+<audio id="bg-music" src="music.mp3#t=7" loop preload="auto"></audio>
 
-<audio id="bg-music" src="./music.mp3#t=7" loop preload="auto"></audio>
-
+<!-- Music Bar -->
 <div id="music-bar">
   <div class="vinyl-mini" id="vinyl-mini"></div>
   <div class="wave-bars" id="wave-bars">
@@ -307,34 +258,11 @@ footer::before { content:''; position:absolute; inset:0; background:url("data:im
     <div class="wave-bar"></div><div class="wave-bar"></div>
     <div class="wave-bar"></div>
   </div>
-  <span class="music-label"> ♪</span>
+  <span class="music-label">♪</span>
   <button class="mute-btn" id="mute-btn" onclick="toggleMute()" title="Mute/Unmute">🔊</button>
 </div>
 
-<script>
-  const audio = document.getElementById("bg-music");
-  const muteBtn = document.getElementById("mute-btn");
-
-  // Start music on first user interaction
-  const startMusic = async () => {
-    try {
-      await audio.play();
-    } catch (e) {}
-    window.removeEventListener("click", startMusic);
-    window.removeEventListener("touchstart", startMusic);
-  };
-
-  window.addEventListener("click", startMusic);
-  window.addEventListener("touchstart", startMusic);
-
-  // Mute toggle
-  function toggleMute() {
-    audio.muted = !audio.muted;
-    muteBtn.textContent = audio.muted ? "🔇" : "🔊";
-  }
-</script>
-
-<!-- ══ I LOVE YOU OVERLAY ══ -->
+<!-- I Love You Overlay -->
 <div id="reveal-overlay">
   <div class="reveal-message">
     <span class="big-heart">💖</span>
@@ -344,7 +272,7 @@ footer::before { content:''; position:absolute; inset:0; background:url("data:im
   </div>
 </div>
 
-<!-- ══ DO YOU LOVE ME POPUP ══ -->
+<!-- Do You Love Me Popup -->
 <div id="love-popup">
   <div class="popup-box">
     <span class="popup-emoji">🥺</span>
@@ -357,12 +285,10 @@ footer::before { content:''; position:absolute; inset:0; background:url("data:im
   </div>
 </div>
 
-<!-- ══ ROMANTIC Q&A ══ -->
+<!-- Romantic Q&A -->
 <div id="qa-overlay">
   <div class="qa-box">
     <div class="progress-dots" id="progress-dots"></div>
-
-    <!-- Step 0 -->
     <div class="qa-step active" id="qa-0">
       <span class="qa-emoji">🌹</span>
       <p class="qa-question">Aww, I knew it! 💕<br>What's your favourite thing about us?</p>
@@ -370,8 +296,6 @@ footer::before { content:''; position:absolute; inset:0; background:url("data:im
       <input class="qa-input" id="ans-0" type="text" placeholder="e.g. when we laugh together...">
       <br><button class="qa-next" onclick="nextStep(0)">Next 💕</button>
     </div>
-
-    <!-- Step 1 -->
     <div class="qa-step" id="qa-1">
       <span class="qa-emoji">🥰</span>
       <p class="qa-question">If I gave you a hug right now, how long would you hold on?</p>
@@ -384,8 +308,6 @@ footer::before { content:''; position:absolute; inset:0; background:url("data:im
       </div>
       <br><button class="qa-next" onclick="nextStep(1)">Next 🌸</button>
     </div>
-
-    <!-- Step 2 -->
     <div class="qa-step" id="qa-2">
       <span class="qa-emoji">💭</span>
       <p class="qa-question">When do you think about me the most?</p>
@@ -398,8 +320,6 @@ footer::before { content:''; position:absolute; inset:0; background:url("data:im
       </div>
       <br><button class="qa-next" onclick="nextStep(2)">Next 💗</button>
     </div>
-
-    <!-- Step 3 -->
     <div class="qa-step" id="qa-3">
       <span class="qa-emoji">🎵</span>
       <p class="qa-question">If our love was a song, it would be called...</p>
@@ -407,8 +327,6 @@ footer::before { content:''; position:absolute; inset:0; background:url("data:im
       <input class="qa-input" id="ans-3" type="text" placeholder='"Forever in your arms"...'>
       <br><button class="qa-next" onclick="nextStep(3)">Next 🎶</button>
     </div>
-
-    <!-- Step 4 -->
     <div class="qa-step" id="qa-4">
       <span class="qa-emoji">🌙</span>
       <p class="qa-question">On a scale of the moon to the stars,<br>how much do you love me?</p>
@@ -421,8 +339,6 @@ footer::before { content:''; position:absolute; inset:0; background:url("data:im
       </div>
       <br><button class="qa-next" onclick="nextStep(4)">Next ✨</button>
     </div>
-
-    <!-- Step 5 -->
     <div class="qa-step" id="qa-5">
       <span class="qa-emoji">💌</span>
       <p class="qa-question">Last one! 🥺<br>Write me one sentence — just for me.</p>
@@ -430,19 +346,16 @@ footer::before { content:''; position:absolute; inset:0; background:url("data:im
       <input class="qa-input" id="ans-5" type="text" placeholder="Write something sweet...">
       <br><button class="qa-next" onclick="nextStep(5)">Send 💕</button>
     </div>
-
-    <!-- Final -->
     <div class="qa-step" id="qa-final">
       <span class="qa-emoji">💖</span>
       <p class="qa-question">Kavi...</p>
       <p class="qa-final-msg" id="final-msg">Loading your message...</p>
       <button class="qa-close" onclick="closeQA()">Close & continue reading 🌸</button>
     </div>
-
   </div>
 </div>
 
-<!-- ══ HERO ══ -->
+<!-- HERO -->
 <section id="hero">
   <span class="hero-eyebrow">✦ a love story, just for you ✦</span>
   <h1 class="hero-name">Kavi</h1>
@@ -451,7 +364,7 @@ footer::before { content:''; position:absolute; inset:0; background:url("data:im
   <button class="reveal-btn" onclick="showReveal()">Click here, my love 💕</button>
 </section>
 
-<!-- ══ COUNTDOWN ══ -->
+<!-- COUNTDOWN -->
 <section id="countdown">
   <span class="countdown-label">✦ our love in numbers ✦</span>
   <h2 class="countdown-title">We've Been in Love For...</h2>
@@ -466,7 +379,7 @@ footer::before { content:''; position:absolute; inset:0; background:url("data:im
   <p class="countdown-since">Since February 13, 2020 — the day my world changed forever 🌸</p>
 </section>
 
-<!-- ══ LETTER ══ -->
+<!-- LETTER -->
 <section id="letter">
   <div class="section-inner">
     <div class="reveal">
@@ -488,7 +401,7 @@ footer::before { content:''; position:absolute; inset:0; background:url("data:im
   </div>
 </section>
 
-<!-- ══ REASONS ══ -->
+<!-- REASONS -->
 <section id="reasons">
   <div class="section-inner">
     <div class="reveal">
@@ -510,7 +423,7 @@ footer::before { content:''; position:absolute; inset:0; background:url("data:im
   </div>
 </section>
 
-<!-- ══ GALLERY ══ -->
+<!-- GALLERY -->
 <section id="gallery">
   <div class="reveal">
     <span class="section-label" style="display:block;text-align:center">✦ our moments</span>
@@ -522,19 +435,21 @@ footer::before { content:''; position:absolute; inset:0; background:url("data:im
       <div class="photo-overlay"><span class="photo-caption">Us 💕</span></div>
     </div>
     <div class="photo-frame" id="frame-2">
-<img src="img2.jpeg" style="width:100%;height:100%;object-fit:cover;">      <div class="photo-overlay"><span class="photo-caption">A beautiful day 🌸</span></div>
+      <img src="img2.jpeg" style="width:100%;height:100%;object-fit:cover;">
+      <div class="photo-overlay"><span class="photo-caption">A beautiful day 🌸</span></div>
     </div>
     <div class="photo-frame" id="frame-3">
-<img src="img3.jpeg" style="width:100%;height:100%;object-fit:cover;">      <div class="photo-overlay"><span class="photo-caption">My favourite smile 💕</span></div>
+      <img src="img3.jpeg" style="width:100%;height:100%;object-fit:cover;">
+      <div class="photo-overlay"><span class="photo-caption">My favourite smile 💕</span></div>
     </div>
     <div class="photo-frame" id="frame-4">
-<img src="img4.jpeg" style="width:100%;height:100%;object-fit:cover;">      <div class="photo-overlay"><span class="photo-caption">Together always ✨</span></div>
+      <img src="img4.jpeg" style="width:100%;height:100%;object-fit:cover;">
+      <div class="photo-overlay"><span class="photo-caption">Together always ✨</span></div>
     </div>
   </div>
-  <p class="gallery-note reveal">Click "Add photo" to add your photos 🌸</p>
 </section>
 
-<!-- ══ TIMELINE ══ -->
+<!-- TIMELINE -->
 <section id="timeline">
   <div style="text-align:center;" class="reveal">
     <span class="section-label">✦ our journey</span>
@@ -561,7 +476,7 @@ footer::before { content:''; position:absolute; inset:0; background:url("data:im
   </div>
 </section>
 
-<!-- ══ PROMISE ══ -->
+<!-- PROMISE -->
 <section id="promise">
   <div class="reveal" style="text-align:center;max-width:700px;margin:0 auto;padding:0 2rem;">
     <span class="section-label">✦ my promise to you</span>
@@ -580,7 +495,7 @@ footer::before { content:''; position:absolute; inset:0; background:url("data:im
   </div>
 </section>
 
-<!-- ══ FOOTER ══ -->
+<!-- FOOTER -->
 <footer>
   <span class="footer-heart">💕</span>
   <p class="footer-name">For my Kavi — always.</p>
@@ -588,22 +503,42 @@ footer::before { content:''; position:absolute; inset:0; background:url("data:im
 </footer>
 
 <script>
+// ══ MUSIC ══
+const bgMusic = document.getElementById('bg-music');
+let muted = false;
+
+function startMusic() {
+  bgMusic.play().catch(() => {});
+  document.getElementById('wave-bars').classList.add('playing');
+  document.getElementById('vinyl-mini').classList.add('playing');
+}
+
+function toggleMute() {
+  muted = !muted;
+  bgMusic.muted = muted;
+  document.getElementById('mute-btn').textContent = muted ? '🔇' : '🔊';
+  document.getElementById('wave-bars').classList.toggle('playing', !muted);
+  document.getElementById('vinyl-mini').classList.toggle('playing', !muted);
+}
+
 // ══ LOADING ══
 window.addEventListener('load', () => {
-  // Start music right away (needs user gesture in some browsers, so we try)
   setTimeout(() => {
     document.getElementById('loading').classList.add('hide');
     setTimeout(() => document.getElementById('loading').remove(), 1200);
     startMusic();
-    // Popup after 5 seconds
     setTimeout(showLovePopup, 5000);
   }, 2000);
 });
 
+// Start music on first interaction (browser autoplay policy)
+document.addEventListener('click', startMusic, { once: true });
+document.addEventListener('touchstart', startMusic, { once: true });
+
 // ══ CURSOR ══
 const cur = document.getElementById('cursor');
 const ring = document.getElementById('cursor-ring');
-let mx=0,my=0,rx=0,ry=0;
+let mx=0, my=0, rx=0, ry=0;
 document.addEventListener('mousemove', e => { mx=e.clientX; my=e.clientY; });
 (function animC() {
   cur.style.left=mx+'px'; cur.style.top=my+'px';
@@ -618,88 +553,25 @@ function makePetal() {
   const svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
   svg.setAttribute('viewBox','0 0 40 40');
   const s = 14+Math.random()*20;
-  svg.style.cssText=`width:${s}px;height:auto;`;
-  const colors=['#f7a8be','#f9c4d0','#e8809a','#fbd5df','#f4879e','#fce4ec'];
-  const c=colors[Math.floor(Math.random()*colors.length)];
-  const r=Math.random();
-  svg.innerHTML=`<ellipse cx="20" cy="20" rx="${10+r*8}" ry="${14+r*6}" fill="${c}" opacity="${.5+Math.random()*.4}" transform="rotate(${Math.random()*30-15} 20 20)"/>`;
-  const w=document.createElement('div');
-  w.className='petal'; w.appendChild(svg);
-  w.style.left=Math.random()*100+'vw';
-  const dur=7+Math.random()*10;
-  w.style.animationDuration=dur+'s';
-  w.style.animationDelay=Math.random()*4+'s';
+  svg.style.cssText = `width:${s}px;height:auto;`;
+  const colors = ['#f7a8be','#f9c4d0','#e8809a','#fbd5df','#f4879e','#fce4ec'];
+  const c = colors[Math.floor(Math.random()*colors.length)];
+  const r = Math.random();
+  svg.innerHTML = `<ellipse cx="20" cy="20" rx="${10+r*8}" ry="${14+r*6}" fill="${c}" opacity="${.5+Math.random()*.4}" transform="rotate(${Math.random()*30-15} 20 20)"/>`;
+  const w = document.createElement('div');
+  w.className = 'petal'; w.appendChild(svg);
+  w.style.left = Math.random()*100+'vw';
+  const dur = 7+Math.random()*10;
+  w.style.animationDuration = dur+'s';
+  w.style.animationDelay = Math.random()*4+'s';
   petalContainer.appendChild(w);
-  setTimeout(()=>w.remove(),(dur+5)*1000);
+  setTimeout(() => w.remove(), (dur+5)*1000);
 }
-for(let i=0;i<18;i++) setTimeout(makePetal,i*200);
-setInterval(makePetal,700);
+for(let i=0;i<18;i++) setTimeout(makePetal, i*200);
+setInterval(makePetal, 700);
 
-// ══ MUSIC (background ambient) ══
-let audioCtx=null, gainMaster=null, muted=false, musicStarted=false;
-let allOscs=[];
-
-function startMusic() {
-  if(musicStarted) return;
-  try {
-    audioCtx = new (window.AudioContext||window.webkitAudioContext)();
-    gainMaster = audioCtx.createGain();
-    gainMaster.gain.value = 0.06;
-    gainMaster.connect(audioCtx.destination);
-    musicStarted = true;
-    playLoop();
-    document.getElementById('wave-bars').classList.add('playing');
-    document.getElementById('vinyl-mini').classList.add('playing');
-  } catch(e) {}
-}
-
-// Gentle romantic chord loop
-const chords = [
-  [261.63,329.63,392.00,523.25],   // C maj
-  [293.66,349.23,440.00,587.33],   // D min
-  [349.23,440.00,523.25,698.46],   // F maj
-  [329.63,392.00,493.88,659.25],   // E min
-];
-let loopTimeout;
-function playLoop() {
-  if(!audioCtx) return;
-  let t = audioCtx.currentTime;
-  chords.forEach((chord,ci) => {
-    chord.forEach((freq,fi) => {
-      const osc = audioCtx.createOscillator();
-      const g = audioCtx.createGain();
-      const pan = audioCtx.createStereoPanner();
-      osc.type = fi===0?'sine':'sine';
-      osc.frequency.value = freq * (fi<2?0.5:0.25);
-      pan.pan.value = (fi%2===0?-.3:.3)*(Math.random()*.5+.5);
-      osc.connect(g); g.connect(pan); pan.connect(gainMaster);
-      const start = t + ci*3.5;
-      g.gain.setValueAtTime(0,start);
-      g.gain.linearRampToValueAtTime(1, start+.8);
-      g.gain.linearRampToValueAtTime(.6, start+2.5);
-      g.gain.linearRampToValueAtTime(0, start+3.5);
-      osc.start(start); osc.stop(start+3.6);
-      allOscs.push(osc);
-    });
-  });
-  // repeat every ~14s
-  loopTimeout = setTimeout(playLoop, 13800);
-}
-
-function toggleMute() {
-  if(!audioCtx) { startMusic(); return; }
-  muted = !muted;
-  gainMaster.gain.value = muted ? 0 : 0.06;
-  document.getElementById('mute-btn').textContent = muted ? '🔇' : '🔊';
-  const wb = document.getElementById('wave-bars');
-  const vm = document.getElementById('vinyl-mini');
-  if(muted) { wb.classList.remove('playing'); vm.classList.remove('playing'); }
-  else { wb.classList.add('playing'); vm.classList.add('playing'); }
-}
-
-// Start music on first interaction too (browser policy)
-document.addEventListener('click', () => { if(!musicStarted) startMusic(); }, {once:true});
-document.addEventListener('touchstart', () => { if(!musicStarted) startMusic(); }, {once:true});
+// ══ BURST PETALS ══
+function burst(n) { for(let i=0;i<n;i++) setTimeout(makePetal, i*60); }
 
 // ══ REVEAL "I LOVE YOU" ══
 function showReveal() {
@@ -716,41 +588,30 @@ function showLovePopup() {
   document.getElementById('love-popup').classList.add('show');
   repositionNoBtn();
 }
-
 function repositionNoBtn() {
-  const btn = document.getElementById('btn-no');
-  // Labels that change as she tries to click it
   const labels = ['No','Nope 😅','Try again 😂','Still no? 🤔','You sure? 👀','Hmm... 😒','WRONG BUTTON 😤','Run run run 🏃','Noooo 😭','You cannnot 💀'];
-  btn.textContent = labels[Math.min(noCount, labels.length-1)];
+  document.getElementById('btn-no').textContent = labels[Math.min(noCount, labels.length-1)];
 }
-
 function runAway() {
   noCount++;
   const btn = document.getElementById('btn-no');
   const box = document.querySelector('.popup-box');
-  const boxRect = box.getBoundingClientRect();
-  const bw = btn.offsetWidth, bh = btn.offsetHeight;
-  const maxX = boxRect.width - bw - 10;
-  const maxY = boxRect.height - bh - 10;
-  const rx = Math.random()*maxX + 5;
-  const ry = Math.random()*maxY + 5;
+  const maxX = box.offsetWidth - btn.offsetWidth - 10;
+  const maxY = box.offsetHeight - btn.offsetHeight - 10;
   btn.style.position = 'absolute';
-  btn.style.left = rx+'px';
-  btn.style.top  = ry+'px';
+  btn.style.left = (Math.random()*maxX + 5)+'px';
+  btn.style.top  = (Math.random()*maxY + 5)+'px';
   btn.style.transition = 'all .25s cubic-bezier(0.34,1.56,0.64,1)';
   repositionNoBtn();
-  // After 8 escapes, button disappears and shows "I knew it 💕"
   if(noCount > 8) {
-    btn.style.opacity='0';
-    btn.style.pointerEvents='none';
+    btn.style.opacity = '0';
+    btn.style.pointerEvents = 'none';
     showToast("I knew it! You love me 💕😂");
   }
 }
-
 function onYes() {
   document.getElementById('love-popup').classList.remove('show');
   noCount = 0;
-  // Reset no button
   const btn = document.getElementById('btn-no');
   btn.style.position=''; btn.style.left=''; btn.style.top=''; btn.style.opacity=''; btn.style.pointerEvents='';
   burst(20);
@@ -763,79 +624,58 @@ function onYes() {
 
 // ══ ROMANTIC Q&A ══
 let currentStep = 0;
-const totalSteps = 6; // 0-5 + final
 const answers = {};
-
 function initQA() {
   currentStep = 0;
-  // Build progress dots
   const dots = document.getElementById('progress-dots');
   dots.innerHTML = '';
   for(let i=0;i<6;i++) {
     const d = document.createElement('div');
-    d.className = 'dot' + (i===0?' active':'');
+    d.className = 'dot'+(i===0?' active':'');
     d.id = 'dot-'+i;
     dots.appendChild(d);
   }
   showStep(0);
 }
-
 function showStep(n) {
-  document.querySelectorAll('.qa-step').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.qa-step').forEach(s => s.classList.remove('active'));
   const el = document.getElementById('qa-'+n) || document.getElementById('qa-final');
   if(el) el.classList.add('active');
-  // update dots
   for(let i=0;i<6;i++) {
     const d = document.getElementById('dot-'+i);
     if(d) d.classList.toggle('active', i<=n);
   }
 }
-
 function selectOpt(btn) {
-  // deselect siblings
-  btn.closest('.qa-options').querySelectorAll('.qa-opt').forEach(b=>b.classList.remove('selected'));
+  btn.closest('.qa-options').querySelectorAll('.qa-opt').forEach(b => b.classList.remove('selected'));
   btn.classList.add('selected');
 }
-
 function nextStep(step) {
-  // save answer
   const input = document.getElementById('ans-'+step);
   const selected = document.querySelector('#qa-'+step+' .qa-opt.selected');
-  answers[step] = input ? input.value || '...' : (selected ? selected.textContent : '...');
-
-  currentStep = step + 1;
-  if(currentStep >= 6) {
-    showFinal();
-  } else {
-    showStep(currentStep);
-    burst(5);
-  }
+  answers[step] = input ? (input.value||'...') : (selected ? selected.textContent : '...');
+  currentStep = step+1;
+  if(currentStep >= 6) { showFinal(); } else { showStep(currentStep); burst(5); }
 }
-
 function showFinal() {
   const a0 = answers[0]||'being together';
   const a5 = answers[5]||'something beautiful';
-  const msg = document.getElementById('final-msg');
-  msg.innerHTML = `"${a5}"<br><br>
-    That's the most beautiful thing I've ever read. 🥺<br><br>
-    And your favourite thing — <em>"${a0}"</em> — is mine too. 💕<br><br>
-    I love you more than words, more than music, more than anything. 🌸`;
+  document.getElementById('final-msg').innerHTML =
+    `"${a5}"<br><br>That's the most beautiful thing I've ever read. 🥺<br><br>And your favourite thing — <em>"${a0}"</em> — is mine too. 💕<br><br>I love you more than words, more than music, more than anything. 🌸`;
   showStep('final');
   burst(25);
   showToast("💕 Thank you for loving me, Kavi 💕");
 }
-
 function closeQA() {
   document.getElementById('qa-overlay').classList.remove('show');
   burst(10);
 }
 
 // ══ SCROLL REVEAL ══
-const revEls = document.querySelectorAll('.reveal');
-const obs = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting) e.target.classList.add('visible');});
-},{threshold:.1});
-revEls.forEach(r=>obs.observe(r));
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold:.1 });
+document.querySelectorAll('.reveal').forEach(r => obs.observe(r));
 
 // ══ COUNTDOWN ══
 function updateCD() {
@@ -844,7 +684,7 @@ function updateCD() {
   let y=now.getFullYear()-start.getFullYear();
   let mo=now.getMonth()-start.getMonth();
   let d=now.getDate()-start.getDate();
-  if(d<0){mo--;const pm=new Date(now.getFullYear(),now.getMonth(),0);d+=pm.getDate();}
+  if(d<0){mo--;d+=new Date(now.getFullYear(),now.getMonth(),0).getDate();}
   if(mo<0){y--;mo+=12;}
   document.getElementById('cd-years').textContent=y;
   document.getElementById('cd-months').textContent=mo;
@@ -853,176 +693,34 @@ function updateCD() {
   document.getElementById('cd-mins').textContent=now.getMinutes();
   document.getElementById('cd-secs').textContent=now.getSeconds();
 }
-updateCD(); setInterval(updateCD,1000);
-
-// ══ PHOTO UPLOAD ══
-function loadPhoto(input,frameId,caption) {
-  if(!input.files||!input.files[0]) return;
-  const reader=new FileReader();
-  reader.onload=e=>{
-    const frame=document.getElementById(frameId);
-    const ph=frame.querySelector('.photo-placeholder');
-    if(ph) ph.remove();
-    let img=frame.querySelector('img');
-    if(!img){img=document.createElement('img');frame.insertBefore(img,frame.querySelector('.photo-overlay'));}
-    img.src=e.target.result;
-    const cap=frame.querySelector('.photo-caption');
-    if(cap) cap.textContent=caption;
-  };
-  reader.readAsDataURL(input.files[0]);
-}
+updateCD(); setInterval(updateCD, 1000);
 
 // ══ SPARKLES ON CLICK ══
-document.addEventListener('click', e=>{
-  const colors=['#f9c4d0','#e8a0b4','#c9647a','#f7ccd5','#ffffff'];
+document.addEventListener('click', e => {
+  const colors = ['#f9c4d0','#e8a0b4','#c9647a','#f7ccd5','#ffffff'];
   for(let i=0;i<10;i++){
-    const sp=document.createElement('div');
-    sp.style.cssText=`position:fixed;left:${e.clientX}px;top:${e.clientY}px;width:${4+Math.random()*6}px;height:${4+Math.random()*6}px;border-radius:50%;background:${colors[Math.floor(Math.random()*colors.length)]};pointer-events:none;z-index:99997;transform:translate(-50%,-50%);`;
+    const sp = document.createElement('div');
+    sp.style.cssText = `position:fixed;left:${e.clientX}px;top:${e.clientY}px;width:${4+Math.random()*6}px;height:${4+Math.random()*6}px;border-radius:50%;background:${colors[Math.floor(Math.random()*colors.length)]};pointer-events:none;z-index:99997;transform:translate(-50%,-50%);`;
     document.body.appendChild(sp);
-    const angle=(i/10)*Math.PI*2;
-    const dist=30+Math.random()*40;
+    const angle = (i/10)*Math.PI*2;
+    const dist = 30+Math.random()*40;
     sp.animate([
-      {transform:`translate(-50%,-50%)`,opacity:1},
-      {transform:`translate(calc(-50% + ${Math.cos(angle)*dist}px),calc(-50% + ${Math.sin(angle)*dist}px))`,opacity:0}
-    ],{duration:700,easing:'cubic-bezier(0,0.9,0.57,1)',fill:'forwards'});
-    setTimeout(()=>sp.remove(),750);
+      { transform:`translate(-50%,-50%)`, opacity:1 },
+      { transform:`translate(calc(-50% + ${Math.cos(angle)*dist}px),calc(-50% + ${Math.sin(angle)*dist}px))`, opacity:0 }
+    ], { duration:700, easing:'cubic-bezier(0,0.9,0.57,1)', fill:'forwards' });
+    setTimeout(() => sp.remove(), 750);
   }
 });
 
 // ══ TOAST ══
 let toastTimer;
 function showToast(msg) {
-  const t=document.getElementById('toast');
-  t.textContent=msg;
+  const t = document.getElementById('toast');
+  t.textContent = msg;
   t.classList.add('show');
   clearTimeout(toastTimer);
-  toastTimer=setTimeout(()=>t.classList.remove('show'),3500);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 3500);
 }
-
-// ══ BURST PETALS ══
-function burst(n) { for(let i=0;i<n;i++) setTimeout(makePetal,i*60); }
-
-// ══ localStorage saved-audio support ══
-// Stores a chosen audio file as DataURL in localStorage under 'musicData'.
-// On load we prepare an <audio> element and connect it into the AudioContext so
-// it will play when user interacts (startMusic).
-let savedAudioEl = null;
-let savedMusicLoaded = false;
-
-document.getElementById('music-choose-btn').addEventListener('click', () => {
-  document.getElementById('music-file-input').click();
-});
-document.getElementById('music-file-input').addEventListener('change', (e) => {
-  const f = e.target.files && e.target.files[0];
-  if (!f) return;
-  const reader = new FileReader();
-  reader.onload = ev => {
-    try {
-      localStorage.setItem('musicData', ev.target.result);
-      showToast('Saved music to local storage 🎵');
-      prepareSavedMusic(); // prepare immediately (will play on gesture)
-    } catch (err) {
-      console.warn('Could not save music to localStorage', err);
-      showToast('Unable to save (storage full?)');
-    }
-  };
-  reader.readAsDataURL(f);
-  // reset input so same file can be selected again later
-  e.target.value = '';
-});
-
-document.getElementById('music-clear-btn').addEventListener('click', () => {
-  localStorage.removeItem('musicData');
-  if (savedAudioEl) {
-    try { savedAudioEl.pause(); savedAudioEl.src = ''; savedAudioEl.remove(); } catch(_) {}
-    savedAudioEl = null;
-  }
-  savedMusicLoaded = false;
-  showToast('Cleared saved music');
-});
-
-// Prepare saved music (create audio element & connect to AudioContext). Does NOT autoplay.
-function prepareSavedMusic() {
-  const data = localStorage.getItem('musicData');
-  if (!data) return;
-  // If we've already prepared, update src
-  if (savedAudioEl) {
-    savedAudioEl.src = data;
-    savedMusicLoaded = true;
-    return;
-  }
-  savedAudioEl = document.createElement('audio');
-  savedAudioEl.src = data;
-  savedAudioEl.loop = true;
-  savedAudioEl.crossOrigin = 'anonymous';
-  savedAudioEl.preload = 'auto';
-  // Do not call play() here (user gesture required). We'll connect to audioCtx when available.
-  savedMusicLoaded = true;
-  // If audioCtx already exists, connect it so it'll play when the audio element is started.
-  if (audioCtx && gainMaster) connectSavedAudioToCtx();
-}
-
-// Call when audioCtx/gainMaster created
-function connectSavedAudioToCtx() {
-  if (!savedAudioEl || !audioCtx || !gainMaster) return;
-  // If already connected, skip
-  if (savedAudioEl._connected) return;
-  try {
-    const src = audioCtx.createMediaElementSource(savedAudioEl);
-    src.connect(gainMaster);
-    savedAudioEl._connected = true;
-  } catch (e) {
-    // Some browsers disallow createMediaElementSource for certain sources; fallback to direct play
-    console.warn('Could not connect saved audio to AudioContext:', e);
-  }
-}
-
-// Modify startMusic to prefer saved audio if present
-const originalStartMusic = startMusic;
-startMusic = function() {
-  if (musicStarted) return;
-  // call existing startMusic code path to create audioCtx + synth
-  originalStartMusic();
-  // ensure saved audio is prepared and connected
-  if (!savedMusicLoaded) prepareSavedMusic();
-  if (savedMusicLoaded && savedAudioEl) {
-    // connect when audioCtx exists
-    if (audioCtx && gainMaster) connectSavedAudioToCtx();
-    // start audio element playback (user gesture already delivered if startMusic triggered by click)
-    const playPromise = savedAudioEl.play();
-    if (playPromise && typeof playPromise.then === 'function') {
-      playPromise.catch(()=> {
-        // autoplay blocked — user must interact. We already call startMusic on first click in your code,
-        // so typically this will succeed. If blocked, show hint.
-        showToast('Tap anywhere to start music');
-      });
-    }
-    // visually mark playing
-    document.getElementById('wave-bars').classList.add('playing');
-    document.getElementById('vinyl-mini').classList.add('playing');
-  }
-};
-
-// Ensure if audioCtx created elsewhere we still connect saved audio
-const origCreateAudioCtx = (() => {})();
-(function watchCtx() {
-  // if audioCtx/gainMaster available and saved audio exists, connect it
-  if (audioCtx && gainMaster && savedMusicLoaded && savedAudioEl) connectSavedAudioToCtx();
-  requestAnimationFrame(watchCtx);
-})();
-
-// prepare on load (will only prepare element, not autoplay)
-window.addEventListener('load', () => {
-  prepareSavedMusic();
-});
-
-// update toggleMute to also mute savedAudioEl
-const origToggleMute = toggleMute;
-toggleMute = function() {
-  // existing behavior toggles gainMaster — keep that
-  origToggleMute();
-  if (savedAudioEl) savedAudioEl.muted = muted;
-};
 </script>
 </body>
 </html>
