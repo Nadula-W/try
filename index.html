@@ -298,7 +298,7 @@ footer::before { content:''; position:absolute; inset:0; background:url("data:im
 <div id="toast">🌸</div>
 
 
-<audio id="bg-music" src="music.mp3#t=7" loop autoplay></audio>
+<audio id="bg-music" src="./music.mp3#t=7" loop preload="auto"></audio>
 
 <div id="music-bar">
   <div class="vinyl-mini" id="vinyl-mini"></div>
@@ -310,6 +310,30 @@ footer::before { content:''; position:absolute; inset:0; background:url("data:im
   <span class="music-label"> ♪</span>
   <button class="mute-btn" id="mute-btn" onclick="toggleMute()" title="Mute/Unmute">🔊</button>
 </div>
+
+<script>
+  const audio = document.getElementById("bg-music");
+  const muteBtn = document.getElementById("mute-btn");
+
+  // Start music on first user interaction
+  const startMusic = async () => {
+    try {
+      await audio.play();
+    } catch (e) {}
+    window.removeEventListener("click", startMusic);
+    window.removeEventListener("touchstart", startMusic);
+  };
+
+  window.addEventListener("click", startMusic);
+  window.addEventListener("touchstart", startMusic);
+
+  // Mute toggle
+  function toggleMute() {
+    audio.muted = !audio.muted;
+    muteBtn.textContent = audio.muted ? "🔇" : "🔊";
+  }
+</script>
+
 <!-- ══ I LOVE YOU OVERLAY ══ -->
 <div id="reveal-overlay">
   <div class="reveal-message">
